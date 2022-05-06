@@ -1,12 +1,19 @@
 .c-header {
-  width: 100%;
   height: $main-header-height;
   position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(255, 255, 255, 0.8);
   z-index: 1;
 
   @include mq(lg, max) {
     height: 90px;
+    background-color: rgba(255, 255, 255);
+  }
+
+  @include mq(md, max) {
+    height: 45px;
   }
 
   &.is-active {
@@ -15,6 +22,10 @@
     transition: all 0.2s ease-in-out;
     @include mq(lg, max) {
       height: 90px;
+    }
+
+    @include mq(md, max) {
+      height: 45px;
     }
 
     & .c-header__logo > a > figure:nth-child(1) {
@@ -63,7 +74,11 @@
     @include mq(lg, max) {
       padding: 0 40px;
     }
+    @include mq(md, max) {
+      padding: 0 20px;
+    }
   }
+
   .c-header__wrapper {
     display: flex;
     justify-content: space-between;
@@ -211,12 +226,28 @@
       height: 90px;
     }
 
+    @include mq(md, max) {
+      height: 45px;
+    }
+
     .c-header__logoSp > a > figure {
       display: flex;
+      @include mq(md, max) {
+        width: 162px;
+        height: 23px;
+      }
     }
 
     .c-header__navSp > label {
       display: flex;
+      cursor: pointer;
+      @include mq(md, max) {
+        width: 32px;
+        height: 25px;
+      }
+      &:hover {
+        opacity: 0.7;
+      }
     }
 
     .c-header__navSp {
@@ -245,16 +276,31 @@
         left: 0;
         right: 0;
         background-color: #ffffff;
-        padding: 40px 0;
+        padding-top: 40px;
+        overflow-y: auto;
+        height: calc(100vh - 90px);
+
+        @include mq(md, max) {
+          top: 45px;
+          padding-top: 20px;
+          height: calc(100vh - 45px);
+        }
 
         & > .c-header__navContact {
           text-align: center;
           border-bottom: 1px dotted #ccc;
+          padding: 0 40px;
+          @include mq(md, max) {
+            padding: 0 20px;
+          }
 
           & > .c-header__navAddress {
             font-size: 2.8rem;
             line-height: 1.45;
             letter-spacing: 2.8px;
+            @include mq(md, max) {
+              letter-spacing: 1.4px;
+            }
           }
 
           & > .c-header__navTel {
@@ -262,11 +308,17 @@
             font-family: Lora;
             line-height: 1.7;
             letter-spacing: 3px;
+            @include mq(md, max) {
+              letter-spacing: 1.5px;
+            }
             & > span {
               display: inline-block;
               font-size: 3.6rem;
               font-family: Lora;
               letter-spacing: 3.6px;
+              @include mq(md, max) {
+                letter-spacing: 1.8px;
+              }
             }
           }
 
@@ -275,11 +327,42 @@
             font-family: Lora;
             line-height: 2.125;
             letter-spacing: 2.4px;
+            @include mq(md, max) {
+              letter-spacing: 1.2px;
+            }
           }
         }
 
         & > .c-header__navList > ul > li {
           border-bottom: 1px dotted #ccc;
+        }
+
+        & > .c-header__navList.is-navSub1 > ul:first-child {
+          display: none;
+        }
+
+        & > .c-header__navList.is-navSub2 > ul:first-child {
+          display: none;
+        }
+
+        & > .c-header__navList > ul > .c-header__navItem--green {
+          background-color: #40a62a;
+          & > a {
+            color: #ffffff;
+            & > span {
+              color: #ffffff;
+            }
+          }
+        }
+
+        & > .c-header__navList > ul > .c-header__navItem--blue {
+          background-color: #44b8d1;
+          & > a {
+            color: #ffffff;
+            & > span {
+              color: #ffffff;
+            }
+          }
         }
 
         & > .c-header__navList > ul > li > a {
@@ -290,6 +373,10 @@
           line-height: 1.2;
           letter-spacing: 3px;
           padding: 20px 40px;
+          @include mq(md, max) {
+            padding: 10px 20px;
+            letter-spacing: 1.5px;
+          }
 
           & > span {
             display: flex;
@@ -300,7 +387,68 @@
             line-height: 1;
             margin-top: -7px;
             margin-right: 20px;
+            @include mq(md, max) {
+              margin-top: -3.5px;
+              margin-right: 10px;
+            }
           }
+        }
+
+        & > .c-header__navList > p {
+          display: none;
+          cursor: pointer;
+          &:hover {
+            opacity: 0.7;
+          }
+        }
+
+        & > .c-header__navList.is-navSub1 > p,
+        & > .c-header__navList.is-navSub2 > p {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 3rem;
+          color: #ffffff;
+          background-color: #333333;
+          border-bottom: 1px dotted #ccc;
+          line-height: 1.2;
+          letter-spacing: 3px;
+          padding: 20px 40px;
+          @include mq(md, max) {
+            letter-spacing: 1.5px;
+            padding: 10px 20px;
+          }
+
+          & > span {
+            display: flex;
+            align-items: center;
+            font-size: 3.6rem;
+            font-weight: bold;
+            color: #ffffff;
+            line-height: 1;
+            margin-top: -7px;
+            margin-right: 20px;
+            @include mq(md, max) {
+              margin-top: -3.5px;
+              margin-right: 10px;
+            }
+          }
+        }
+
+        & > .c-header__navList > .c-header__navSub1 {
+          display: none;
+        }
+
+        & > .c-header__navList.is-navSub1 > .c-header__navSub1 {
+          display: block;
+        }
+
+        & > .c-header__navList > .c-header__navSub2 {
+          display: none;
+        }
+
+        & > .c-header__navList.is-navSub2 > .c-header__navSub2 {
+          display: block;
         }
       }
 

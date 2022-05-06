@@ -1,4 +1,4 @@
-<% const basePath='.' ; const title='Task03 - HOME' ; const description='' ;
+<% const basePath='.' ; const title='Task18 - HOME' ; const description='' ;
 const keyword='' ; %>
 <!DOCTYPE html>
 <html lang="ja">
@@ -10,7 +10,64 @@ const keyword='' ; %>
     <div class="l-wrapper">
       <%- include('layout/_header', { basePath }); %>
 
-      <main class="l-main"></main>
+      <main class="l-main">
+        <section class="p-slider">
+          <div class="p-slider__container">
+            <div class="p-slider__wrapper p-slider__visual1">
+              <div class="p-slider__visual1Content">
+                <figure class="p-slider__visual1Logo">
+                  <img
+                    src="./assets/images/slider/logo-mainvisual1.png"
+                    alt="logo-mainvisual1"
+                  />
+                </figure>
+                <div class="p-slider__visual1Info">
+                  <h2>Protect <span>the</span>future</h2>
+                  <p>防災技術を駆使し、地域の未来を守る。</p>
+                </div>
+              </div>
+
+              <div class="p-slider__visual2Content">
+                <h2>Protect</h2>
+                <p>生命と財産を守る</p>
+              </div>
+
+              <div class="p-slider__visual3Content">
+                <h2>Connect</h2>
+                <p>地域と人を繋ぐ</p>
+              </div>
+
+              <div class="p-slider__visual4Content">
+                <h2>Technology</h2>
+                <p>最新技術を生かす</p>
+              </div>
+
+              <div class="p-slider__control">
+                <div class="p-slider__controlItem is-active"></div>
+                <div class="p-slider__controlItem"></div>
+                <div class="p-slider__controlItem"></div>
+                <div class="p-slider__controlItem"></div>
+              </div>
+
+              <div class="p-slider__post">
+                <div class="p-slider__postWrap">
+                  <div class="p-slider__postControl">
+                    <div class="p-slider__postItem">&lt;</div>
+                    <div class="p-slider__postItem">&gt;</div>
+                  </div>
+                  <a href="#" class="p-slider__postNews">
+                    <span>2018年11月22日</span>
+                    先進建設・防災・減災技術フェアin熊本にドローン等について出展しました。
+                  </a>
+                  <a href="#" class="p-slider__postInfoList">
+                    <span>お知らせ一覧 ></span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
 
       <%- include('layout/_footer', { basePath }); %>
     </div>
