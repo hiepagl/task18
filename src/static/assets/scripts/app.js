@@ -11,6 +11,13 @@ let goBack = $("#goBack");
 let slider = $(".p-slider__wrapper");
 let sliderControl = $$(".p-slider__controlItem");
 
+// reality intro
+let realityList = $$(".p-reality__list > li");
+let btnLeft = $(".p-reality__btnLeft");
+let btnRight = $(".p-reality__btnRight");
+let currentIndex = 0;
+
+// header
 window.onscroll = function () {
   handleScrollTopHeader();
 };
@@ -40,6 +47,7 @@ showNavSub2.onclick = function () {
   headerNavList.classList.add("is-navSub2");
 };
 
+// slider
 let clearSlider = function () {
   for (let i = 0; i < sliderControl.length; i++) {
     slider.classList.remove(`p-slider__visual${i + 1}`);
@@ -60,3 +68,36 @@ for (let i = 0; i < sliderControl.length; i++) {
     sliderControl[i].classList.add("is-active");
   };
 }
+
+// reality intro
+let clearRealityList = function () {
+  for (let i = 0; i < realityList.length; i++) {
+    realityList[i].classList.remove("is-active");
+  }
+};
+
+let renderRealityList = function () {
+  for (let i = 0; i < realityList.length; i++) {
+    if (currentIndex === i) {
+      clearRealityList();
+      realityList[i].classList.add("is-active");
+    }
+  }
+};
+
+let prevRealityItem = function () {
+  currentIndex = currentIndex <= 0 ? realityList.length - 1 : currentIndex - 1;
+  renderRealityList();
+};
+
+let nextRealityItem = function () {
+  currentIndex = currentIndex >= realityList.length - 1 ? 0 : currentIndex + 1;
+  renderRealityList();
+};
+
+btnLeft.onclick = prevRealityItem;
+btnRight.onclick = nextRealityItem;
+
+let autoSlide = setInterval(() => {
+  nextRealityItem();
+}, 3000);
