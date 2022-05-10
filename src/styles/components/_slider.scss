@@ -14,13 +14,53 @@
     background-size: cover;
     height: 672px;
     position: relative;
-
+    color: #ffffff;
     @include mq(lg, max) {
       //   height: 780px;
     }
 
     @include mq(md, max) {
       height: 390px;
+    }
+
+    &::before {
+      content: "";
+      border-radius: 25px;
+      border: 2px solid;
+      cursor: pointer;
+      color: currentColor;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: 110px;
+      transition: 0.3s;
+      width: 30px;
+      height: 56px;
+      z-index: 1;
+      @include mq(md, max) {
+        width: 16px;
+        height: 23px;
+        bottom: 25px;
+      }
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: 150px;
+      background-color: currentColor;
+      border-radius: 50%;
+      height: 6px;
+      width: 6px;
+      opacity: 1;
+      animation: scrollMouse 3s ease infinite;
+      @include mq(md, max) {
+        height: 3px;
+        width: 3px;
+        animation: scrollMouseSp 3s ease infinite;
+      }
     }
   }
 
@@ -324,5 +364,33 @@
         }
       }
     }
+  }
+}
+
+@keyframes scrollMouse {
+  0% {
+    bottom: 150px;
+    opacity: 1;
+  }
+  80% {
+    opacity: 0.7;
+  }
+  100% {
+    bottom: 120px;
+    opacity: 0;
+  }
+}
+
+@keyframes scrollMouseSp {
+  0% {
+    bottom: 45px;
+    opacity: 1;
+  }
+  80% {
+    opacity: 0.7;
+  }
+  100% {
+    bottom: 30px;
+    opacity: 0;
   }
 }

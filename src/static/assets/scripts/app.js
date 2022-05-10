@@ -48,6 +48,7 @@ showNavSub2.onclick = function () {
 };
 
 // slider
+let currentSlide = 1;
 let clearSlider = function () {
   for (let i = 0; i < sliderControl.length; i++) {
     slider.classList.remove(`p-slider__visual${i + 1}`);
@@ -68,6 +69,18 @@ for (let i = 0; i < sliderControl.length; i++) {
     sliderControl[i].classList.add("is-active");
   };
 }
+
+let renderSlider = function () {
+  clearSlider();
+  clearSliderControl();
+  slider.classList.add(`p-slider__visual${currentSlide}`);
+  sliderControl[currentSlide - 1].classList.add("is-active");
+};
+
+let nextSlider = function () {
+  currentSlide = currentSlide >= sliderControl.length ? 1 : currentSlide + 1;
+  renderSlider();
+};
 
 // reality intro
 let clearRealityList = function () {
@@ -99,5 +112,6 @@ btnLeft.onclick = prevRealityItem;
 btnRight.onclick = nextRealityItem;
 
 let autoSlide = setInterval(() => {
+  nextSlider();
   nextRealityItem();
-}, 3000);
+}, 4000);

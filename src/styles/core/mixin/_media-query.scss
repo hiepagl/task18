@@ -16,7 +16,7 @@ $mq-breakpoints: (
   "xs-max": 599px,
   "sm-max": 959px,
   "md-max": 1279px,
-  "lg-max": 1919px,
+  "lg-max": 1599px,
 );
 
 @mixin mq($breakpoint: md, $rule: min, $subtraction: true) {
