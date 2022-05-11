@@ -55,6 +55,24 @@ button {
   cursor: pointer;
 }
 
+input,
+textarea {
+  border: none;
+  outline: none;
+  margin: 0;
+  padding: 0;
+  &::placeholder {
+    color: #cccccc;
+  }
+  &:focus {
+    border: 1px solid rgb(166, 138, 42) !important;
+  }
+}
+
+select:focus {
+  border: 1px solid rgb(166, 138, 42);
+}
+
 p,
 span,
 dl,

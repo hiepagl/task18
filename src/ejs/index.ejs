@@ -52,13 +52,25 @@ const keyword='' ; %>
               <div class="p-slider__post">
                 <div class="p-slider__postWrap">
                   <div class="p-slider__postControl">
-                    <div class="p-slider__postItem">&lt;</div>
-                    <div class="p-slider__postItem">&gt;</div>
+                    <div class="p-slider__postItem" id="prevPost">&lt;</div>
+                    <div class="p-slider__postItem" id="nextPost">&gt;</div>
                   </div>
-                  <a href="#" class="p-slider__postNews">
-                    <span>2018年11月22日</span>
-                    先進建設・防災・減災技術フェアin熊本にドローン等について出展しました。
-                  </a>
+                  <div class="p-slider__postInfo">
+                    <div class="p-slider__postInfoWrap">
+                      <a href="#" class="p-slider__postNews">
+                        <span>2018年11月22日</span>
+                        先進建設・防災・減災技術フェアin熊本にドローン等について出展しました。
+                      </a>
+                      <a href="#" class="p-slider__postNews">
+                        <span>2018年11月22日</span>
+                        先進建設・防災・減災技術フいて出展しました。
+                      </a>
+                      <a href="#" class="p-slider__postNews">
+                        <span>2018年11月22日</span>
+                        先本にドローン等て出展しました。
+                      </a>
+                    </div>
+                  </div>
                   <a href="#" class="p-slider__postInfoList">
                     <span>お知らせ一覧 ></span>
                   </a>
@@ -268,22 +280,22 @@ const keyword='' ; %>
                     </div>
                   </a>
                 </li>
-                <button class="p-reality__btnLeft">
+                <div class="p-reality__btnLeft">
                   <figure>
                     <img
                       src="./assets/images/reality/arrow-left.png"
                       alt="arrow-left"
                     />
                   </figure>
-                </button>
-                <button class="p-reality__btnRight">
+                </div>
+                <div class="p-reality__btnRight">
                   <figure>
                     <img
                       src="./assets/images/reality/arrow-right.png"
                       alt="arrow-right"
                     />
                   </figure>
-                </button>
+                </div>
               </ul>
             </div>
           </div>
@@ -373,6 +385,15 @@ const keyword='' ; %>
         <!-- end news -->
       </main>
 
+      <a href="#" class="c-scrollTop">
+        <div class="c-scrollTop__btn">
+          <span>^</span>
+          <p>TOP</p>
+        </div>
+        <figure>
+          <img src="./assets/images/totop_logo.png" alt="toTopLogo" />
+        </figure>
+      </a>
       <%- include('layout/_footer', { basePath }); %>
     </div>
   </body>

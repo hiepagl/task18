@@ -10,6 +10,9 @@ let goBack = $("#goBack");
 // slider
 let slider = $(".p-slider__wrapper");
 let sliderControl = $$(".p-slider__controlItem");
+let postNews = $(".p-slider__postNews");
+let nextPost = $("#nextPost");
+let prevPost = $("#prevPost");
 
 // reality intro
 let realityList = $$(".p-reality__list > li");
@@ -82,6 +85,19 @@ let nextSlider = function () {
   renderSlider();
 };
 
+let nextPostNews = function () {
+  let newsItems = $$(".p-slider__postNews > p");
+  postNews.append(newsItems[0]);
+};
+
+let prevPostNews = function () {
+  let newsItems = $$(".p-slider__postNews > p");
+  postNews.prepend(newsItems[newsItems.length - 1]);
+};
+
+prevPost.onclick = prevPostNews;
+nextPost.onclick = nextPostNews;
+
 // reality intro
 let clearRealityList = function () {
   for (let i = 0; i < realityList.length; i++) {
@@ -111,7 +127,7 @@ let nextRealityItem = function () {
 btnLeft.onclick = prevRealityItem;
 btnRight.onclick = nextRealityItem;
 
-let autoSlide = setInterval(() => {
-  nextSlider();
-  nextRealityItem();
-}, 4000);
+// let autoSlide = setInterval(() => {
+//   nextSlider();
+//   nextRealityItem();
+// }, 4000);

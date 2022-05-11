@@ -284,13 +284,41 @@
         }
       }
 
+      .p-slider__postInfo {
+        display: flex;
+        align-items: center;
+        position: relative;
+        overflow-x: hidden;
+        flex-grow: 1;
+        width: 746px;
+        height: 30px;
+        @include mq(lg, max) {
+          height: auto;
+          width: auto;
+        }
+        @include mq(md, max) {
+          max-width: calc(100% - 70px);
+          margin-bottom: 10px;
+          margin-left: 10px;
+          height: auto;
+          width: auto;
+        }
+
+        & > .p-slider__postInfoWrap {
+          width: 100%;
+          position: absolute;
+          left: 0;
+          top: 0;
+        }
+      }
+
       .p-slider__postNews {
         display: flex;
         align-items: center;
         font-size: 1.5rem;
         letter-spacing: 1.5px;
         color: #ffffff;
-
+        width: 100%;
         @include mq(lg, max) {
           font-size: 1.1rem;
           letter-spacing: 1.1px;
@@ -301,9 +329,6 @@
           font-size: 2.4rem;
           letter-spacing: 1.2px;
           line-height: 1.7;
-          margin-left: 10px;
-          margin-bottom: 10px;
-          max-width: calc(100% - 70px);
         }
         & > span {
           margin-left: 10px;
