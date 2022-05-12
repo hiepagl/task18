@@ -283,11 +283,14 @@
       }
 
       .c-header__navMenu {
-        display: none;
         position: absolute;
         top: 90px;
         left: 0;
         right: 0;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateX(100%);
+        transition: all 0.3s ease-in-out;
         background-color: #ffffff;
         padding-top: 40px;
         overflow-y: auto;
@@ -466,7 +469,9 @@
       }
 
       & > input:checked ~ .c-header__navMenu {
-        display: block;
+        opacity: 1;
+        visibility: visible;
+        transform: translateX(0);
       }
     }
   }

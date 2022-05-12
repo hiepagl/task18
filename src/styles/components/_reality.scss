@@ -104,11 +104,23 @@
       margin: -10px;
     }
     @include mq(md, max) {
-      max-width: 670px;
+      display: flex;
       margin: 0;
-      justify-content: center;
-      position: relative;
+      width: fit-content;
+      position: absolute;
+      top: 0;
+      left: 0;
+      transition: all 0.3s ease;
     }
+
+    &.is-next {
+      @include mq(md, max) {
+        opacity: 1;
+        visibility: visible;
+        transform: translateX(25%);
+      }
+    }
+
     & > li {
       width: 25%;
       padding: 15px;
@@ -116,17 +128,17 @@
         padding: 10px;
       }
       @include mq(md, max) {
-        display: none;
+        padding: 10px;
+        width: 225px;
+        // opacity: 0;
+        // visibility: hidden;
+        // transition: all 0.3s ease;
       }
 
-      &.is-active {
-        @include mq(md, max) {
-          display: block;
-          padding: 0;
-          width: 100%;
-          max-width: 225px;
-        }
-      }
+      // &:nth-child(2) {
+      //   opacity: 1;
+      //   visibility: visible;
+      // }
 
       & > a {
         padding-top: 100%;
@@ -252,7 +264,19 @@
         }
       }
     }
+  }
 
+  .p-reality__body {
+    position: relative;
+    & > .p-reality__bodyWrap {
+      @include mq(md, max) {
+        width: 225px;
+        height: 225px;
+        margin: auto;
+        position: relative;
+        overflow-x: hidden;
+      }
+    }
     & > .p-reality__btnLeft {
       display: none;
       @include mq(md, max) {

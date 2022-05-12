@@ -15,14 +15,10 @@
     height: 672px;
     position: relative;
     color: #ffffff;
-    @include mq(lg, max) {
-      //   height: 780px;
-    }
-
-    @include mq(md, max) {
-      height: 390px;
-    }
-
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.5s linear;
+    animation: none;
     &::before {
       content: "";
       border-radius: 25px;
@@ -55,11 +51,11 @@
       height: 6px;
       width: 6px;
       opacity: 1;
-      animation: scrollMouse 3s ease infinite;
+      animation: scrollMouse 3s linear infinite;
       @include mq(md, max) {
         height: 3px;
         width: 3px;
-        animation: scrollMouseSp 3s ease infinite;
+        animation: scrollMouseSp 3s linear infinite;
       }
     }
   }
@@ -67,10 +63,26 @@
   @for $i from 1 through 4 {
     .p-slider__visual#{$i} {
       background-image: url(../images/slider/mainvisual#{$i}.jpg);
+      opacity: 1;
+      visibility: visible;
+      transition: all 0.5s linear;
+      animation: zoomBackground 30s linear infinite;
+      @include mq(xxl, max) {
+        animation: zoomBackgroundXXL 30s linear infinite;
+      }
+      @include mq(lg, max) {
+        animation: zoomBackgroundLG 30s linear infinite;
+      }
+      @include mq(md, max) {
+        background-image: url(../images/slider/mainvisual_sp#{$i}.jpg);
+        animation: zoomBackground 30s linear infinite;
+        height: 390px;
+      }
     }
 
     .p-slider__visual#{$i}Content {
-      display: none;
+      opacity: 0;
+      visibility: hidden;
       position: absolute;
       top: 50%;
       left: 50%;
@@ -78,7 +90,8 @@
     }
 
     .p-slider__visual#{$i} > .p-slider__visual#{$i}Content {
-      display: block;
+      opacity: 1;
+      visibility: visible;
     }
   }
 
@@ -95,6 +108,17 @@
 
   .p-slider__visual1Logo {
     display: flex;
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(0) rotateY(360deg);
+    transition: all 2s ease-in-out;
+  }
+
+  .p-slider__visual1 > .p-slider__visual1Content > .p-slider__visual1Logo {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1) rotateY(0deg);
+    transition: all 2s ease-in-out;
   }
 
   .p-slider__visual1Info {
@@ -103,7 +127,6 @@
     left: 50%;
     transform: translateX(-50%);
     text-shadow: 0px 0px 5px rgba(136, 136, 136, 0.75);
-
     @include mq(md, max) {
       top: 22.5px;
     }
@@ -114,6 +137,11 @@
       color: #ffffff;
       letter-spacing: 9px;
       line-height: 0.9;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-40px);
+      transition: all 1s ease-in-out;
+      transition-delay: 1s;
       @include mq(md, max) {
         letter-spacing: 4.5px;
       }
@@ -136,9 +164,27 @@
       color: #ffffff;
       line-height: 1.5;
       letter-spacing: 1.8px;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-20px);
+      transition: all 1s ease-in-out;
+      transition-delay: 1.7s;
       @include mq(md, max) {
         letter-spacing: 0.9px;
       }
+    }
+  }
+
+  .p-slider__visual1 > .p-slider__visual1Content > .p-slider__visual1Info {
+    & > h2 {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+    & > p {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
     }
   }
 
@@ -153,6 +199,12 @@
       color: #ffffff;
       letter-spacing: 8px;
       line-height: 1.25;
+
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-40px);
+      transition: all 1s ease-in-out;
+      transition-delay: 1s;
       @include mq(lg, max) {
         font-size: 10rem;
         letter-spacing: 10px;
@@ -169,6 +221,12 @@
       color: #ffffff;
       line-height: 1.5;
       letter-spacing: 1.8px;
+
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-20px);
+      transition: all 1s ease-in-out;
+      transition-delay: 1.7s;
       @include mq(lg, max) {
         font-size: 3rem;
         letter-spacing: 3px;
@@ -176,6 +234,21 @@
       @include mq(md, max) {
         letter-spacing: 1.5px;
       }
+    }
+  }
+
+  .p-slider__visual2 > .p-slider__visual2Content,
+  .p-slider__visual3 > .p-slider__visual3Content,
+  .p-slider__visual4 > .p-slider__visual4Content {
+    & > h2 {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+    & > p {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
     }
   }
 
@@ -288,27 +361,29 @@
         display: flex;
         align-items: center;
         position: relative;
-        overflow-x: hidden;
+        overflow: hidden;
         flex-grow: 1;
-        width: 746px;
         height: 30px;
         @include mq(lg, max) {
-          height: auto;
-          width: auto;
+          height: 20px;
+          flex-grow: 1;
         }
         @include mq(md, max) {
           max-width: calc(100% - 70px);
           margin-bottom: 10px;
           margin-left: 10px;
-          height: auto;
+          height: 46px;
           width: auto;
         }
 
         & > .p-slider__postInfoWrap {
-          width: 100%;
+          display: flex;
+          height: 100%;
           position: absolute;
           left: 0;
           top: 0;
+          transform: translateX(-33.33%);
+          transition: all 2s ease;
         }
       }
 
@@ -318,7 +393,16 @@
         font-size: 1.5rem;
         letter-spacing: 1.5px;
         color: #ffffff;
-        width: 100%;
+        width: 771px;
+        height: 100%;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 2s ease;
+        &:nth-child(2) {
+          opacity: 1;
+          visibility: visible;
+          transition: all 2s ease;
+        }
         @include mq(lg, max) {
           font-size: 1.1rem;
           letter-spacing: 1.1px;
@@ -417,5 +501,32 @@
   100% {
     bottom: 30px;
     opacity: 0;
+  }
+}
+
+@keyframes zoomBackground {
+  0% {
+    background-size: 110%;
+  }
+  100% {
+    background-size: 140%;
+  }
+}
+
+@keyframes zoomBackgroundXXL {
+  0% {
+    background-size: 150%;
+  }
+  100% {
+    background-size: 180%;
+  }
+}
+
+@keyframes zoomBackgroundLG {
+  0% {
+    background-size: 180%;
+  }
+  100% {
+    background-size: 210%;
   }
 }

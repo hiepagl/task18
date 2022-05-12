@@ -63,7 +63,7 @@
         top: -45px;
         left: -317px;
         width: 1065px;
-        animation: flycam 5s ease infinite;
+        animation: flycam 5s linear infinite;
         @include mq(lg, max) {
           position: relative;
           top: auto;

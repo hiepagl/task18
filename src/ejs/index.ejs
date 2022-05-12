@@ -13,7 +13,7 @@ const keyword='' ; %>
       <main class="l-main">
         <section class="p-slider">
           <div class="p-slider__container">
-            <div class="p-slider__wrapper p-slider__visual1">
+            <div class="p-slider__wrapper">
               <div class="p-slider__visual1Content">
                 <figure class="p-slider__visual1Logo">
                   <img
@@ -58,20 +58,20 @@ const keyword='' ; %>
                   <div class="p-slider__postInfo">
                     <div class="p-slider__postInfoWrap">
                       <a href="#" class="p-slider__postNews">
+                        <span>2017年09月01日</span>
+                        ドローンレーザスキャナを導入しました
+                      </a>
+                      <a href="#" class="p-slider__postNews">
+                        <span>2018年07月04日</span>
+                        綿田地区の復興を願って寄付をしました。
+                      </a>
+                      <a href="#" class="p-slider__postNews">
                         <span>2018年11月22日</span>
                         先進建設・防災・減災技術フェアin熊本にドローン等について出展しました。
                       </a>
-                      <a href="#" class="p-slider__postNews">
-                        <span>2018年11月22日</span>
-                        先進建設・防災・減災技術フいて出展しました。
-                      </a>
-                      <a href="#" class="p-slider__postNews">
-                        <span>2018年11月22日</span>
-                        先本にドローン等て出展しました。
-                      </a>
                     </div>
                   </div>
-                  <a href="#" class="p-slider__postInfoList">
+                  <a href="#newsList" class="p-slider__postInfoList">
                     <span>お知らせ一覧 ></span>
                   </a>
                 </div>
@@ -211,75 +211,79 @@ const keyword='' ; %>
                   そして豊かに快適に暮らせるように』、そんな想いを込めて仕事をしています。
                 </p>
               </div>
-              <ul class="p-reality__list">
-                <li class="is-active">
-                  <a href="#">
-                    <div class="p-reality__item">
-                      <figure>
-                        <img
-                          src="./assets/images/reality/reality-item1.jpg"
-                          alt="reality-item1"
-                        />
-                        <figcaption>ICT・BIM/CIM</figcaption>
-                      </figure>
-                      <div class="p-reality__content">
-                        <p>No title</p>
-                      </div>
-                      <span>></span>
-                    </div>
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    <div class="p-reality__item">
-                      <figure>
-                        <img
-                          src="./assets/images/reality/reality-item2.jpg"
-                          alt="reality-item2"
-                        />
-                        <figcaption>防災・減災業務</figcaption>
-                      </figure>
-                      <div class="p-reality__content">
-                        <p>十籠地すべり対策事業</p>
-                      </div>
-                      <span>></span>
-                    </div>
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    <div class="p-reality__item">
-                      <figure>
-                        <img
-                          src="./assets/images/reality/reality-item3.jpg"
-                          alt="reality-item3"
-                        />
-                        <figcaption>防災・減災業務</figcaption>
-                      </figure>
-                      <div class="p-reality__content">
-                        <p>水ヶ浦地区災害関連緊急地すべり対策事業</p>
-                      </div>
-                      <span>></span>
-                    </div>
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    <div class="p-reality__item">
-                      <figure>
-                        <img
-                          src="./assets/images/reality/reality-item4.jpg"
-                          alt="reality-item4"
-                        />
-                        <figcaption>防災・減災業務</figcaption>
-                      </figure>
-                      <div class="p-reality__content">
-                        <p>大切畑地区災害関連緊急地すべり対策事業</p>
-                      </div>
-                      <span>></span>
-                    </div>
-                  </a>
-                </li>
+              <div class="p-reality__body">
+                <div class="p-reality__bodyWrap">
+                  <ul class="p-reality__list">
+                    <li>
+                      <a href="#">
+                        <div class="p-reality__item">
+                          <figure>
+                            <img
+                              src="./assets/images/reality/reality-item1.jpg"
+                              alt="reality-item1"
+                            />
+                            <figcaption>ICT・BIM/CIM</figcaption>
+                          </figure>
+                          <div class="p-reality__content">
+                            <p>No title</p>
+                          </div>
+                          <span>></span>
+                        </div>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <div class="p-reality__item">
+                          <figure>
+                            <img
+                              src="./assets/images/reality/reality-item2.jpg"
+                              alt="reality-item2"
+                            />
+                            <figcaption>防災・減災業務</figcaption>
+                          </figure>
+                          <div class="p-reality__content">
+                            <p>十籠地すべり対策事業</p>
+                          </div>
+                          <span>></span>
+                        </div>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <div class="p-reality__item">
+                          <figure>
+                            <img
+                              src="./assets/images/reality/reality-item3.jpg"
+                              alt="reality-item3"
+                            />
+                            <figcaption>防災・減災業務</figcaption>
+                          </figure>
+                          <div class="p-reality__content">
+                            <p>水ヶ浦地区災害関連緊急地すべり対策事業</p>
+                          </div>
+                          <span>></span>
+                        </div>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <div class="p-reality__item">
+                          <figure>
+                            <img
+                              src="./assets/images/reality/reality-item4.jpg"
+                              alt="reality-item4"
+                            />
+                            <figcaption>防災・減災業務</figcaption>
+                          </figure>
+                          <div class="p-reality__content">
+                            <p>大切畑地区災害関連緊急地すべり対策事業</p>
+                          </div>
+                          <span>></span>
+                        </div>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
                 <div class="p-reality__btnLeft">
                   <figure>
                     <img
@@ -296,7 +300,7 @@ const keyword='' ; %>
                     />
                   </figure>
                 </div>
-              </ul>
+              </div>
             </div>
           </div>
           <a href="#">実績紹介一覧 ></a>
@@ -327,7 +331,7 @@ const keyword='' ; %>
         </section>
         <!-- end company -->
 
-        <section class="p-news">
+        <section class="p-news" id="newsList">
           <div class="p-news__container">
             <div class="p-news__wrapper">
               <div class="p-news__heading">
