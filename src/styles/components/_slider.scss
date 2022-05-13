@@ -28,7 +28,7 @@
       position: absolute;
       left: 50%;
       transform: translateX(-50%);
-      bottom: 110px;
+      bottom: 138px;
       transition: 0.3s;
       width: 30px;
       height: 56px;
@@ -45,7 +45,7 @@
       position: absolute;
       left: 50%;
       transform: translateX(-50%);
-      bottom: 150px;
+      bottom: 178px;
       background-color: currentColor;
       border-radius: 50%;
       height: 6px;
@@ -123,7 +123,7 @@
 
   .p-slider__visual1Info {
     position: absolute;
-    top: 45px;
+    top: 41px;
     left: 50%;
     transform: translateX(-50%);
     text-shadow: 0px 0px 5px rgba(136, 136, 136, 0.75);
@@ -152,7 +152,7 @@
         font-family: Lora;
         color: #ffffff;
         letter-spacing: 2.8px;
-        line-height: 1.5;
+        line-height: 2;
         @include mq(md, max) {
           letter-spacing: 1.4px;
         }
@@ -163,7 +163,7 @@
       font-size: 1.8rem;
       color: #ffffff;
       line-height: 1.5;
-      letter-spacing: 1.8px;
+      letter-spacing: 1.3px;
       opacity: 0;
       visibility: hidden;
       transform: translateY(-20px);
@@ -192,6 +192,13 @@
   .p-slider__visual3Content,
   .p-slider__visual4Content {
     text-shadow: 0px 0px 5px rgba(136, 136, 136, 0.75);
+
+    @include mq(md, max) {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
     & > h2 {
       text-align: center;
       font-size: 8rem;
@@ -212,6 +219,9 @@
       }
       @include mq(md, max) {
         letter-spacing: 5px;
+        line-height: 1;
+        margin-bottom: 10px;
+        margin-left: 3px;
       }
     }
 
@@ -233,6 +243,9 @@
       }
       @include mq(md, max) {
         letter-spacing: 1.5px;
+        line-height: 1;
+        margin-bottom: 5px;
+        margin-left: 3px;
       }
     }
   }
@@ -260,9 +273,6 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    @include mq(lg, max) {
-      //   right: 30px;
-    }
     @include mq(md, max) {
       right: 15px;
     }
@@ -299,7 +309,6 @@
     padding: 0 20px;
     height: 50px;
     margin: auto;
-
     @include mq(lg, max) {
       height: 40px;
     }
@@ -329,14 +338,14 @@
         background-color: #333333;
         display: inline-flex;
         padding: 20px;
-        padding-bottom: 0;
+        padding-top: 15px;
+        padding-bottom: 3px;
         align-items: flex-start;
       }
       .p-slider__postControl {
         display: flex;
         align-items: center;
         justify-content: center;
-
         & > .p-slider__postItem {
           display: flex;
           align-items: center;
@@ -356,7 +365,6 @@
           }
         }
       }
-
       .p-slider__postInfo {
         display: flex;
         align-items: center;
@@ -372,18 +380,34 @@
           max-width: calc(100% - 70px);
           margin-bottom: 10px;
           margin-left: 10px;
-          height: 46px;
+          height: 63px;
           width: auto;
         }
 
         & > .p-slider__postInfoWrap {
           display: flex;
+          width: 400%;
           height: 100%;
           position: absolute;
           left: 0;
           top: 0;
-          transform: translateX(-33.33%);
-          transition: all 2s ease;
+          transition: all 0.3s ease-in-out;
+
+          &.is-next0 {
+            transform: translateX(0);
+          }
+
+          &.is-next1 {
+            transform: translateX(-25%);
+          }
+
+          &.is-next2 {
+            transform: translateX(-50%);
+          }
+
+          &.is-next3 {
+            transform: translateX(-75%);
+          }
         }
       }
 
@@ -391,18 +415,11 @@
         display: flex;
         align-items: center;
         font-size: 1.5rem;
-        letter-spacing: 1.5px;
+        letter-spacing: 1.2px;
         color: #ffffff;
-        width: 771px;
+        width: 25%;
         height: 100%;
-        opacity: 0;
-        visibility: hidden;
-        transition: all 2s ease;
-        &:nth-child(2) {
-          opacity: 1;
-          visibility: visible;
-          transition: all 2s ease;
-        }
+
         @include mq(lg, max) {
           font-size: 1.1rem;
           letter-spacing: 1.1px;
@@ -411,7 +428,7 @@
           flex-direction: column;
           align-items: flex-start;
           font-size: 2.4rem;
-          letter-spacing: 1.2px;
+          letter-spacing: 1px;
           line-height: 1.7;
         }
         & > span {
@@ -448,8 +465,8 @@
           margin-left: 0;
           padding-left: 0;
           font-size: 2.6rem;
-          letter-spacing: 1.3px;
-          line-height: 3;
+          line-height: 3.3;
+          letter-spacing: 1px;
           text-align: right;
           display: block;
           width: 100%;
@@ -478,14 +495,14 @@
 
 @keyframes scrollMouse {
   0% {
-    bottom: 150px;
+    bottom: 178px;
     opacity: 1;
   }
   80% {
     opacity: 0.7;
   }
   100% {
-    bottom: 120px;
+    bottom: 148px;
     opacity: 0;
   }
 }

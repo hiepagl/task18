@@ -7,7 +7,8 @@
   }
 
   @include mq(md, max) {
-    padding: 20px 0;
+    padding-top: 19px;
+    padding-bottom: 21px;
   }
 
   .p-company__wrapper {
@@ -45,26 +46,27 @@
       }
       & > h2 {
         font-size: 3rem;
-        letter-spacing: 3px;
-        line-height: 1.2;
         font-weight: bold;
         color: #ffffff;
+        line-height: 1;
+        letter-spacing: 3px;
+        margin-bottom: 15px;
         @include mq(md, max) {
           font-size: 3.2rem;
           letter-spacing: 1.6px;
-          line-height: 1.125;
-          margin-bottom: 10px;
+          line-height: 1;
+          margin-bottom: 16px;
         }
       }
       & > p {
         font-size: 1.5rem;
-        letter-spacing: 1.5px;
+        letter-spacing: 1px;
         line-height: 2;
         font-weight: bold;
         color: #ffffff;
         @include mq(md, max) {
           font-size: 2.4rem;
-          letter-spacing: 1.2px;
+          letter-spacing: 0.8px;
           line-height: 1.7;
           display: inline;
         }
@@ -75,9 +77,11 @@
         line-height: 1;
         font-weight: bold;
         color: #ffffff;
+        margin-top: 5px;
         @include mq(md, max) {
           font-size: 3rem;
           letter-spacing: 1.5px;
+          margin-top: 0;
         }
       }
     }

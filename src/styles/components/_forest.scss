@@ -1,7 +1,7 @@
 .p-forest {
-  padding-top: 90px;
+  padding-top: 100px;
   @include mq(md, max) {
-    padding-top: 45px;
+    padding-top: 50px;
   }
 
   .p-forest__container {
@@ -24,13 +24,14 @@
     font-size: 1.8rem;
     letter-spacing: 1.8px;
     font-weight: bold;
-    line-height: 1;
+    line-height: 0.9;
     color: #000000;
     text-align: center;
     padding: 30px 0;
     @include mq(md, max) {
       font-size: 2.8rem;
       letter-spacing: 1.4px;
+      line-height: 1;
       padding: 25px 0;
     }
   }
@@ -115,7 +116,7 @@
       }
       @include mq(md, max) {
         max-width: 100%;
-        padding: 20px;
+        padding: 0 19px;
       }
       & > h2 {
         font-size: 2.4rem;
@@ -124,10 +125,12 @@
         color: #ffffff;
         font-weight: bold;
         max-width: 410px;
+        margin-left: -2px;
         @include mq(md, max) {
           font-size: 3.2rem;
-          letter-spacing: 1.6px;
+          letter-spacing: 1px;
           max-width: 100%;
+          margin-left: 0;
         }
         & > span {
           display: inline-block;
@@ -151,9 +154,10 @@
         margin: 20px 0;
         @include mq(md, max) {
           font-size: 2.4rem;
-          letter-spacing: 1.2px;
           line-height: 1.7;
-          margin: 15px 0;
+          letter-spacing: 0.3px;
+          margin-top: 22px;
+          margin-bottom: 12px;
         }
       }
 
@@ -164,7 +168,7 @@
         color: #ffffff;
         @include mq(md, max) {
           font-size: 2.4rem;
-          letter-spacing: 1.2px;
+          letter-spacing: 0;
           line-height: 1.7;
         }
         & > span {

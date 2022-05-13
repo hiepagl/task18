@@ -1,8 +1,12 @@
 let $ = document.querySelector.bind(document);
 let $$ = document.querySelectorAll.bind(document);
+window.onbeforeunload = function () {
+  window.scrollTo(0, 0);
+};
 // header
 let header = $(".c-header");
 let headerNavList = $(".c-header__navList");
+let scrollTop = $(".c-scrollTop");
 let showNavSub1 = $("#show-navSub1");
 let showNavSub2 = $("#show-navSub2");
 let goBack = $("#goBack");
@@ -11,8 +15,11 @@ let goBack = $("#goBack");
 let slider = $(".p-slider__wrapper");
 let sliderControl = $$(".p-slider__controlItem");
 let postNews = $(".p-slider__postInfoWrap");
+let postNewsItems = $$(".p-slider__postInfoWrap > a");
 let nextPost = $("#nextPost");
 let prevPost = $("#prevPost");
+let currentSlide = 1;
+let currentPost = 0;
 
 // reality intro
 let realityList = $(".p-reality__list");
@@ -37,6 +44,12 @@ function handleScrollTopHeader() {
   } else {
     header.classList.remove("is-active");
   }
+
+  if (scrollTopHeader > window.innerHeight - 80) {
+    scrollTop.classList.add("is-active");
+  } else {
+    scrollTop.classList.remove("is-active");
+  }
 }
 
 goBack.onclick = function () {
@@ -52,10 +65,15 @@ showNavSub2.onclick = function () {
 };
 
 // slider
-let currentSlide = 1;
 let clearSlider = function () {
   for (let i = 0; i < sliderControl.length; i++) {
     slider.classList.remove(`p-slider__visual${i + 1}`);
+  }
+};
+
+let clearPostSlider = function () {
+  for (let i = 0; i < postNewsItems.length; i++) {
+    postNews.classList.remove(`is-next${i}`);
   }
 };
 
@@ -87,14 +105,17 @@ let nextSlider = function () {
 };
 
 let nextPostNews = function () {
-  let newsItems = $$(".p-slider__postInfoWrap > a");
-  postNews.append(newsItems[0]);
+  clearPostSlider();
+  currentPost = currentPost >= postNewsItems.length ? 1 : currentPost + 1;
+  postNews.classList.add(`is-next${currentPost}`);
 };
 
 let prevPostNews = function () {
-  let newsItems = $$(".p-slider__postInfoWrap > a");
-  postNews.prepend(newsItems[newsItems.length - 1]);
+  clearPostSlider();
+  currentPost = currentPost <= 0 ? postNewsItems.length - 1 : currentPost - 1;
+  postNews.classList.add(`is-next${currentPost}`);
 };
+
 slider.classList.add("p-slider__visual1");
 prevPost.onclick = prevPostNews;
 nextPost.onclick = nextPostNews;
@@ -127,5 +148,5 @@ btnRight.onclick = nextRealityItem;
 let autoSlide = setInterval(() => {
   nextSlider();
   nextPostNews();
-  // nextRealityItem();
+  nextRealityItem();
 }, 5000);

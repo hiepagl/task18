@@ -12,7 +12,7 @@
     }
 
     @include mq(md, max) {
-      padding-top: 40px;
+      padding-top: 39px;
       background-image: url(../images/reality/bg-reality_sp.jpg);
       height: 475px;
     }
@@ -48,9 +48,9 @@
 
   .p-reality__heading {
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: 37px;
     @include mq(md, max) {
-      margin-bottom: 30px;
+      margin-bottom: 22px;
     }
     & > .p-reality__logo {
       display: flex;
@@ -58,9 +58,11 @@
       width: 40px;
       height: 25px;
       margin: auto;
+      margin-bottom: -3px;
       @include mq(md, max) {
         width: 35px;
         height: 22px;
+        margin-bottom: 0;
       }
     }
     & > h2 {
@@ -68,12 +70,13 @@
       font-weight: bold;
       line-height: 2;
       letter-spacing: 2.4px;
+      margin-bottom: 10px;
       @include mq(md, max) {
         font-size: 3.6rem;
         letter-spacing: 1.8px;
         line-height: 1;
         margin-top: 10px;
-        margin-bottom: 25px;
+        margin-bottom: 19px;
       }
     }
     & > p {
@@ -84,15 +87,9 @@
       }
       @include mq(md, max) {
         font-size: 2.8rem;
-        letter-spacing: 1.4px;
+        letter-spacing: 0.6px;
         line-height: 1.7;
         text-align: center;
-        margin: 0 -10px;
-      }
-      &:last-child {
-        @include mq(md, max) {
-          margin: 0 -8px;
-        }
       }
     }
   }
@@ -110,14 +107,30 @@
       position: absolute;
       top: 0;
       left: 0;
-      transition: all 0.3s ease;
+      transition: all 0.5s ease;
     }
 
-    &.is-next {
+    &.is-next0 {
       @include mq(md, max) {
-        opacity: 1;
-        visibility: visible;
-        transform: translateX(25%);
+        transform: translateX(0);
+      }
+    }
+
+    &.is-next1 {
+      @include mq(md, max) {
+        transform: translateX(-25%);
+      }
+    }
+
+    &.is-next2 {
+      @include mq(md, max) {
+        transform: translateX(-50%);
+      }
+    }
+
+    &.is-next3 {
+      @include mq(md, max) {
+        transform: translateX(-75%);
       }
     }
 
@@ -129,17 +142,8 @@
       }
       @include mq(md, max) {
         padding: 10px;
-        width: 225px;
-        // opacity: 0;
-        // visibility: hidden;
-        // transition: all 0.3s ease;
+        width: 235px;
       }
-
-      // &:nth-child(2) {
-      //   opacity: 1;
-      //   visibility: visible;
-      // }
-
       & > a {
         padding-top: 100%;
         position: relative;
@@ -189,7 +193,7 @@
           & > .p-reality__content {
             position: relative;
             min-height: 100px;
-            padding: 7.5px 15px;
+            padding: 10px 15px;
 
             @include mq(lg, max) {
               min-height: 64px;
@@ -202,8 +206,8 @@
 
             & > p {
               font-size: 1.5rem;
-              letter-spacing: 1.5px;
-              line-height: 2;
+              letter-spacing: 1px;
+              line-height: 1.7;
               font-weight: bold;
               @include mq(lg, max) {
                 font-size: 1.1rem;
@@ -270,8 +274,8 @@
     position: relative;
     & > .p-reality__bodyWrap {
       @include mq(md, max) {
-        width: 225px;
-        height: 225px;
+        width: 235px;
+        height: 235px;
         margin: auto;
         position: relative;
         overflow-x: hidden;

@@ -14,12 +14,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/quanghtangagl/training.git"
+    "url": "git+https://github.com/hiepagl/task18.git"
   },
   "author": "AGL",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/quanghtangagl/training/issues"
+    "url": "https://github.com/hiepagl/task18/issues"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.2",
@@ -50,7 +50,7 @@
     "stylelint-config-sass-guidelines": "^8.0.0",
     "stylelint-order": "^4.1.0"
   },
-  "homepage": "http://103.77.160.168/~aglstaff/lequangthang/task26",
+  "homepage": "http://103.77.160.168/~aglstaff/nguyenxuanhiep/task18",
   "main": "index.js",
   "dependencies": {
     "bootstrap": "^5.1.3",
